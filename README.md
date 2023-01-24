@@ -55,42 +55,66 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step-1: create module encoder and decoder.
 
+Step-2: Get inputs and outputs for encoders and decoders.
 
+Step-3: perform or operation for encoder and and logic for decoders.
+
+Step-4: perform RTL LOGIC and get waveform.
+
+Step-5: End the module.
 
 ### PROGRAM 
 /*
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by:YOGABHARATHI.S 
+RegisterNumber: 22009015 
 */
+ENCODER:
+```
+module EX7(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+```
+DECODER:
+```
+module EX7(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+input a,b,c;
+output d0,d1,d2,d3,d4,d5,d6,d7;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+```
+### RTL LOGIC
+ENCODER:
+![ENCODER](https://user-images.githubusercontent.com/118899387/214295987-42690b76-731d-492c-bfb7-c653da379ad4.png)
 
-
-
-
-
-
-### RTL LOGIC  
-
-
-
-
-
-
-
+DECODER:
+![DECODER](https://user-images.githubusercontent.com/118899387/214295898-d9767418-236e-4c6d-9bd0-cd06735c4781.png)
 
 ### TIMING DIGRAMS  
+ENCODER:
+![ENCODETIMING](https://user-images.githubusercontent.com/118899387/214296983-a2184af3-3db2-479f-8861-ffffd3488f1a.png)
 
-
-
-
+DECODER:
+![DECODERTIMING](https://user-images.githubusercontent.com/118899387/214296286-38269a7a-d13d-4fd4-8b06-0836756bf2ac.png)
 
 ### TRUTH TABLE 
-
-
-
-
-
+ENCODER:
+![ENCODERTT](https://user-images.githubusercontent.com/118899387/214296503-9e6ffc1c-9953-4cbb-a827-a36ad21ff379.png)
+DECODER:
+![DECODERTT](https://user-images.githubusercontent.com/118899387/214296766-def500a0-c794-4de0-b6a3-5bdf6a5759e1.png)
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is completed.
